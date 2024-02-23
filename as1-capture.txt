@@ -1,0 +1,157 @@
+tegnoor@433-Debian:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:0c:29:72:7a:83 brd ff:ff:ff:ff:ff:ff
+    altname enp2s1
+    inet 192.168.17.131/24 brd 192.168.17.255 scope global dynamic noprefixroute ens33
+       valid_lft 1002sec preferred_lft 1002sec
+    inet6 fe80::b7c8:7867:659c:3543/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: enxe415f6fb88af: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e4:15:f6:fb:88:af brd ff:ff:ff:ff:ff:ff
+    inet 192.168.6.1/24 brd 192.168.6.255 scope global dynamic noprefixroute enxe415f6fb88af
+       valid_lft 696sec preferred_lft 696sec
+    inet6 fe80::e615:f6ff:fefb:88af/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: enxe415f6fb88ad: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000
+    link/ether e4:15:f6:fb:88:ad brd ff:ff:ff:ff:ff:ff
+    inet 192.168.7.1/24 brd 192.168.7.255 scope global dynamic noprefixroute enxe415f6fb88ad
+       valid_lft 696sec preferred_lft 696sec
+    inet6 fe80::df:6976:a9b2:1ac9/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+tegnoor@433-Debian:~$ ping 192.168.7.2
+PING 192.168.7.2 (192.168.7.2) 56(84) bytes of data.
+64 bytes from 192.168.7.2: icmp_seq=1 ttl=64 time=198 ms
+64 bytes from 192.168.7.2: icmp_seq=2 ttl=64 time=1.43 ms
+64 bytes from 192.168.7.2: icmp_seq=3 ttl=64 time=1.08 ms
+64 bytes from 192.168.7.2: icmp_seq=4 ttl=64 time=1.51 ms
+64 bytes from 192.168.7.2: icmp_seq=5 ttl=64 time=0.980 ms
+^C
+--- 192.168.7.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 0.980/40.692/198.458/78.882 ms
+tegnoor@433-Debian:~$ ping google.ca
+PING google.ca (142.251.33.67) 56(84) bytes of data.
+64 bytes from sea09s28-in-f3.1e100.net (142.251.33.67): icmp_seq=1 ttl=128 time=18.6 ms
+64 bytes from sea09s28-in-f3.1e100.net (142.251.33.67): icmp_seq=2 ttl=128 time=15.5 ms
+64 bytes from sea09s28-in-f3.1e100.net (142.251.33.67): icmp_seq=3 ttl=128 time=18.8 ms
+64 bytes from sea09s28-in-f3.1e100.net (142.251.33.67): icmp_seq=4 ttl=128 time=17.3 ms
+64 bytes from sea09s28-in-f3.1e100.net (142.251.33.67): icmp_seq=5 ttl=128 time=16.2 ms
+^C
+--- google.ca ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 15.519/17.298/18.814/1.286 ms
+tegnoor@433-Debian:~$ ./sshToBBG.sh 
+Debian GNU/Linux 11
+
+BeagleBoard.org Debian Bullseye Minimal Image 2023-10-07
+Support: https://bbb.io/debian
+default username:password is [debian:temppwd]
+
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+
+ __          __  _                            _______
+ \ \        / / | |                          |__   __|
+  \ \  /\  / /__| | ___ ___  _ __ ___   ___     | | ___  __ _ _ __   ___   ___  _ __
+   \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \    | |/ _ \/ _` | '_ \ / _ \ / _ \| '__|
+    \  /\  /  __/ | (_| (_) | | | | | |  __/    | |  __/ (_| | | | | (_) | (_) | |
+     \/  \/ \___|_|\___\___/|_| |_| |_|\___|    |_|\___|\__, |_| |_|\___/ \___/|_|
+                                                         __/ |
+                                                        |___/
+
+Last login: Sun Jan 28 04:42:36 2024 from 192.168.7.1
+Hello embedded world, from Tegnoor Gill!
+
+How to play:
+Move the joystick UP if the UPPER light is lit
+Move the joystick DOWN if the LOWER light is lit
+Move the joystick LEFT or RIGHT to QUIT
+Get ready...
+Press DOWN now!
+New best time!
+Correct!
+Your reaction time was 955ms; best so far in game is 955ms.
+Get ready...
+Press UP now!
+New best time!
+Correct!
+Your reaction time was 774ms; best so far in game is 774ms.
+Get ready...
+Press UP now!
+Incorrect.
+Get ready...
+Press DOWN now!
+Incorrect.
+Get ready...
+Press UP now!
+User selected to quit.
+debian@tegnoorg:~$ ./internetToTarget.sh 
+SIOCADDRT: File exists
+nameserver 8.8.8.8
+debian@tegnoorg:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether e4:15:f6:fb:88:ab brd ff:ff:ff:ff:ff:ff
+3: usb0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e4:15:f6:fb:88:ae brd ff:ff:ff:ff:ff:ff
+    inet 192.168.7.2/24 brd 192.168.7.255 scope global usb0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e615:f6ff:fefb:88ae/64 scope link 
+       valid_lft forever preferred_lft forever
+4: usb1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e4:15:f6:fb:88:b0 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.6.2/24 brd 192.168.6.255 scope global usb1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e615:f6ff:fefb:88b0/64 scope link 
+       valid_lft forever preferred_lft forever
+5: can0: <NOARP,ECHO> mtu 16 qdisc noop state DOWN group default qlen 10
+debian@tegnoorg:~$ ping 192.168.7.1
+PING 192.168.7.1 (192.168.7.1) 56(84) bytes of data.
+64 bytes from 192.168.7.1: icmp_seq=1 ttl=64 time=1.91 ms
+64 bytes from 192.168.7.1: icmp_seq=2 ttl=64 time=1.44 ms
+64 bytes from 192.168.7.1: icmp_seq=3 ttl=64 time=1.18 ms
+64 bytes from 192.168.7.1: icmp_seq=4 ttl=64 time=1.64 ms
+64 bytes from 192.168.7.1: icmp_seq=5 ttl=64 time=1.62 ms
+^C
+--- 192.168.7.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 1.179/1.558/1.911/0.242 ms
+debian@tegnoorg:~$ ping google.ca
+PING google.ca (142.250.69.195) 56(84) bytes of data.
+64 bytes from sea30s08-in-f3.1e100.net (142.250.69.195): icmp_seq=1 ttl=127 time=21.9 ms
+64 bytes from sea30s08-in-f3.1e100.net (142.250.69.195): icmp_seq=2 ttl=127 time=19.7 ms
+64 bytes from sea30s08-in-f3.1e100.net (142.250.69.195): icmp_seq=3 ttl=127 time=16.4 ms
+64 bytes from sea30s08-in-f3.1e100.net (142.250.69.195): icmp_seq=4 ttl=127 time=21.7 ms
+64 bytes from sea30s08-in-f3.1e100.net (142.250.69.195): icmp_seq=5 ttl=127 time=19.3 ms
+^C
+--- google.ca ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 16.401/19.806/21.862/1.983 ms
+debian@tegnoorg:~$ cat /ID.txt
+BeagleBoard.org Debian Bullseye Minimal Image 2023-10-07
+debian@tegnoorg:~$ cat /proc/version
+Linux version 5.10.168-ti-r76 (voodoo@rpi4b4g-02) (gcc (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2) #1bullseye SMP PREEMPT Fri Jan 19 22:21:25 UTC 2024
+debian@tegnoorg:~$ cat /proc/uptime
+25293.68 24487.75
+debian@tegnoorg:~$ ./mountNFS.sh 
+debian@tegnoorg:~$ ls
+hostname  hostname.bak  internetToTarget.sh  motd  mountNFS.sh  nfs_message.txt  timing
+debian@tegnoorg:~$ exit
+logout
+Connection to 192.168.7.2 closed.

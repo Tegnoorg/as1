@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/tegnoor/cmpt433/work/as1/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc   -g -std=gnu11 -g -Wall -Werror -Wpedantic -Wextra -D_POSIX_C_SOURCE=200809L -o CMakeFiles/as1.dir/hello.c.o -c /home/tegnoor/cmpt433/work/as1/hello.c",
+  "file": "/home/tegnoor/cmpt433/work/as1/hello.c",
+  "output": "CMakeFiles/as1.dir/hello.c.o"
+}
+]

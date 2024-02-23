@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-gcc -g CMakeFiles/as1.dir/hello.c.o -o as1 
